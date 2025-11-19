@@ -23,10 +23,3 @@ Pruebas visuales que muestren rel resultado de la implementación
 
 ## 🌈 Añade un Gif que represente a esta PR
 ¿Cómo te has sentido desarrollando esta PR
-
-## ✅ Recuerda
-- La rama tiene el formato correcto: tipo_de_issue/numero_issue/descripcion.
-- He añadido un título a la PR descriptivo.
-- Me he asignado como autor.
-- He asignado a dos revisores.
-- He relacionado la PR con la Issue.
