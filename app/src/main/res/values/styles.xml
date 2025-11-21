@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Text -->
+    <style name="AppTitle" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/md_theme_onSurface</item>
+    </style>
+
+    <style name="AppSubhead" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/md_theme_onSurfaceVariant</item>
+    </style>
+
+    <style name="AppSupportingText" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/md_theme_onSurfaceVariant</item>
+    </style>
+
+    <style name="AppHeadline" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/md_theme_onSurface</item>
+    </style>
+
+    <style name="AppOverline" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textColor">@color/md_theme_onSurfaceVariant</item>
+    </style>
+
+    <style name="AppDisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:textColor">@color/md_theme_onSurfaceVariant</item>
+        <item name="android:textSize">@dimen/font_size_extra_high</item>
+    </style>
+
+    <!-- End Text -->
+
+    <!-- StackedCard Component -->
+    <style name="AppOutlinedStackedCard" parent="Widget.Material3.CardView.Outlined">
+
+    </style>
+
+    <style name="AppElevatedStackedCard" parent="Widget.Material3.CardView.Elevated">
+
+    </style>
+
+    <style name="AppFilledStackedCard" parent="Widget.Material3.CardView.Filled">
+
+    </style>
+
+    <style name="AppMediaStackedCard">
+        <item name="android:height">@dimen/height_media_card</item>
+    </style>
+    <!-- End StackedCard Component -->
+
+    <!-- ListItem Component -->
+    <style name="AppImageListItem">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">@dimen/size_media_listitem</item>
+    </style>
+
+    <!-- End ListItem Component -->
+
+    <style name="CircularImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- toolbar -->
+    <style name="AppMainToolbar" parent="Widget.Material3.Toolbar">
+        <item name="titleCentered">true</item>
+        <item name="android:background">@color/md_theme_surface</item>
+        <item name="titleTextColor">@color/md_theme_primary</item>
+    </style>
+
+    <style name="AppCollapseDetailToolbar" parent="Widget.Material3.CollapsingToolbar.Medium">
+        <item name="collapsedTitleTextColor">@color/md_theme_primary</item>
+        <item name="expandedTitleTextColor">@color/md_theme_primary</item>
+        <item name="android:background">@color/md_theme_surface</item>
+        <item name="contentScrim">@color/md_theme_surface</item>
+    </style>
+
+    <style name="AppDetailToolbar" parent="AppMainToolbar">
+        <item name="titleCentered">false</item>
+        <item name="navigationIconTint">@color/md_theme_primary</item>
+    </style>
+
+    <style name="AppBottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemTextColor">@color/md_theme_primary</item>
+        <item name="itemIconTint">@color/md_theme_primary</item>
+    </style>
+
+    <style name="AppChip" parent="@style/ShapeAppearanceOverlay.Material3.Chip">
+        <item name="chipBackgroundColor">@color/md_theme_primaryContainer</item>
+    </style>
+
+</resources>

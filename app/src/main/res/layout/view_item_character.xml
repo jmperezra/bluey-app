@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/spacing"
+    android:layout_marginTop="@dimen/spacing">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_character"
+        style="@style/AppImageListItem"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@id/short_description_character"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/name_character"
+        tools:src="@tools:sample/avatars" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/name_character"
+        style="@style/AppHeadline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/image_character"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Bluey" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/short_description_character"
+        style="@style/AppSupportingText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/name_character"
+        app:layout_constraintStart_toStartOf="@id/name_character"
+        app:layout_constraintTop_toBottomOf="@id/name_character"
+        tools:text="Es la protagonista de la serie y es una perrita australiana." />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/short_description_character" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

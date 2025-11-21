@@ -1,7 +1,8 @@
 package com.jmperezra.bluey.core
 
 import android.app.Application
-import com.jmperezra.bluey.core.di.appModule
+import com.jmperezra.bluey.core.di.coreModule
+import com.jmperezra.bluey.core.di.featureModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -16,7 +17,7 @@ class BlueyApplication : Application() {
         startKoin {
             androidContext(this@BlueyApplication)
             modules(
-                appModule
+                coreModule, featureModule
             )
         }
     }
