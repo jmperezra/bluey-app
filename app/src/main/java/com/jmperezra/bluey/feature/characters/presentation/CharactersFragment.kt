@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.faltenreich.skeletonlayout.Skeleton
 import com.faltenreich.skeletonlayout.applySkeleton
@@ -43,13 +44,22 @@ class CharactersFragment : Fragment() {
 
     private fun setupView() {
         binding.apply {
+            layoutBarCharacters.barCharacters.title = getString(R.string.title_characters_screen)
             listCharacters.apply {
                 layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+                characterAdapter.setOnClickItem { characterId ->
+                    navigateToCharacterDetail(characterId)
+                }
                 adapter = characterAdapter
                 skeleton = applySkeleton(R.layout.view_item_character, 15)
             }
         }
+    }
+
+    private fun navigateToCharacterDetail(characertId: String){
+        val action = CharactersFragmentDirections.actionCharactersFragmentToCharacterDetailFragment(characertId)
+        findNavController().navigate(action)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

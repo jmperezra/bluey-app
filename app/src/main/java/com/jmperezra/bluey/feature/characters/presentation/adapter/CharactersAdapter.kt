@@ -10,6 +10,8 @@ import com.jmperezra.bluey.feature.characters.domain.GetCharactersUseCase
 class CharactersAdapter :
     ListAdapter<GetCharactersUseCase.Output, CharacterViewHolder>(CharacterDiffUtil()) {
 
+    private var onClickItem: ((String) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.view_item_character, parent, false)
@@ -17,7 +19,11 @@ class CharactersAdapter :
     }
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
-        holder.bind(currentList[position])
+        holder.bind(currentList[position], onClickItem)
+    }
+
+    fun setOnClickItem(onClick: (String) -> Unit) {
+        this.onClickItem = onClick
     }
 }
 

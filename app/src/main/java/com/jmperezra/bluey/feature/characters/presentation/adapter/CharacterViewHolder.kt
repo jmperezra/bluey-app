@@ -10,12 +10,17 @@ class CharacterViewHolder(private val view: View) : RecyclerView.ViewHolder(view
 
     private lateinit var binding: ViewItemCharacterBinding
 
-    fun bind(character: GetCharactersUseCase.Output) {
+    fun bind(character: GetCharactersUseCase.Output, onClickItem: ((String) -> Unit)?) {
         binding = ViewItemCharacterBinding.bind(view)
         binding.apply {
             nameCharacter.text = character.name
             shortDescriptionCharacter.text = character.shortDescription
             imageCharacter.fromUrl(character.urlPhoto)
+            onClickItem?.let { onClick ->
+                root.setOnClickListener {
+                    onClick(character.id)
+                }
+            }
         }
     }
 }

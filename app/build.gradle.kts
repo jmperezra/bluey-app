@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.androidx.navigation.safe.args)
 }
 
 android {
@@ -79,6 +80,10 @@ dependencies {
     //Library Image from URL: Coil
     implementation(libs.coil)
     implementation(libs.coil.network.okhttp)
+
+    //Navigation
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui)
 
     // Test
     testImplementation(libs.junit)

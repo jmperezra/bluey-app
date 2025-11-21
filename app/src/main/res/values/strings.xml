@@ -5,7 +5,7 @@
     <string name="xml_cache_key">cache_store</string>
 
     <!-- Characters List Screen -->
-    <string name="title_list_screen">Personajes</string>
+    <string name="title_characters_screen">Personajes</string>
 
     <!-- ErrorView -->
     <string name="button_retry_connection">Reintentar</string>
@@ -14,6 +14,12 @@
     <string name="title_error_server">Error en el servidor</string>
     <string name="description_error_server">Ocurrió un error relacionado con la conexión del servidor</string>
     <string name="title_error_unknown">Error desconocido</string>
-    <string name="description_error_unknown">Se está produciendo un error desconocido
-    en el sistema</string>
+    <string name="description_error_unknown">Se está produciendo un error desconocido en el sistema</string>
+
+    <!-- Label Main Menu -->
+    <string name="label_menu_characters">Personajes</string>
+    <string name="label_menu_watch">Serie</string>
+    <string name="label_menu_games">Juegos</string>
+    <string name="label_menu_about">Info</string>
+
 </resources>

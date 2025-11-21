@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jmperezra.bluey.core.domain.ErrorApp
 import com.jmperezra.bluey.feature.characters.domain.GetCharactersUseCase
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class CharactersViewModel(private val getCharactersUseCase: GetCharactersUseCase) : ViewModel() {
@@ -39,6 +40,7 @@ class CharactersViewModel(private val getCharactersUseCase: GetCharactersUseCase
     data class UiState(
         val isLoading: Boolean = false,
         val errorApp: ErrorApp? = null,
-        val characters: List<GetCharactersUseCase.Output>? = null
+        val characters: List<GetCharactersUseCase.Output>? = null,
+        val onCharacterClicked: ((String) -> Unit)? = null
     )
 }
