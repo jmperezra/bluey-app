@@ -32,6 +32,20 @@ class CharactersXmlLocalDataSource(
         })
     }
 
+    fun find(characterId: String): Result<List<Character>> {
+        return xmlCacheStorage.obtainAll().fold({ characterXmlModels ->
+            val characters: MutableList<Character> = mutableListOf()
+            characterXmlModels.forEach { characterXmlModel ->
+                if (cachePolicy.isValid(characterXmlModel)) {
+                    characters.add(characterXmlModel.toModel())
+                }
+            }
+            Result.success(characters)
+        }, {
+            Result.failure(ErrorApp.CacheError)
+        })
+    }
+
     fun save(characters: List<Character>): Result<Boolean> {
         val createdAt: Long = timeProvider.getCurrentTimeInMs()
         return xmlCacheStorage.save(characters.map { it.toXmlModel(createdAt) })

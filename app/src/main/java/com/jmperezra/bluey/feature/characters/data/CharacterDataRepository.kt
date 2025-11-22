@@ -21,4 +21,16 @@ class CharacterDataRepository(
             resultLocal
         }
     }
+
+    override suspend fun getCharacterDetail(characterId: String): Result<Character> {
+        val resultLocal = localDataSource.findAll()
+        return if (resultLocal.getOrDefault(emptyList()).isEmpty()) {
+            remoteDataSource.fetchAll().onSuccess {
+                localDataSource.clear()
+                localDataSource.save(it)
+            }
+        } else {
+            resultLocal
+        }
+    }
 }
