@@ -21,4 +21,13 @@ class CharactersApiRemoteDataSource(
             }
         }
     }
+
+    suspend fun fetch(characterId: String): Result<Character> {
+        return withContext(dispatcher) {
+            val resultApi = apiCall { characterApiService.fetch(characterId) }
+            resultApi.map { charactersApiModel ->
+                charactersApiModel.toDomain()
+            }
+        }
+    }
 }

@@ -9,7 +9,9 @@ import com.jmperezra.bluey.feature.characters.data.local.xml.CharactersXmlLocalD
 import com.jmperezra.bluey.feature.characters.data.remote.CharacterApiService
 import com.jmperezra.bluey.feature.characters.data.remote.CharactersApiRemoteDataSource
 import com.jmperezra.bluey.feature.characters.domain.CharacterRepository
+import com.jmperezra.bluey.feature.characters.domain.GetCharacterDetailUseCase
 import com.jmperezra.bluey.feature.characters.domain.GetCharactersUseCase
+import com.jmperezra.bluey.feature.characters.presentation.CharacterDetailViewModel
 import com.jmperezra.bluey.feature.characters.presentation.CharactersViewModel
 import com.jmperezra.bluey.feature.characters.presentation.adapter.CharactersAdapter
 import kotlinx.coroutines.Dispatchers
@@ -26,6 +28,10 @@ val characterModule = module {
     viewModelOf(::CharactersViewModel)
     factoryOf(::CharacterDataRepository) bind CharacterRepository::class
     factoryOf(::CharactersAdapter)
+
+    //Character Detail
+    factoryOf(::GetCharacterDetailUseCase)
+    factoryOf(::CharacterDetailViewModel)
 
     factory {
         GetCharactersUseCase(get())
@@ -58,5 +64,6 @@ val characterModule = module {
     factory {
         CharactersApiRemoteDataSource(get(), get())
     }
+
 
 }

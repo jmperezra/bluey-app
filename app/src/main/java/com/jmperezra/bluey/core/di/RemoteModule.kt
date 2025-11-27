@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit
 
 val remoteModule = module {
     val BASE_URL = "https://iesalonsodemadrigal.es/dam/api/"
+
     single {
         OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().apply {
