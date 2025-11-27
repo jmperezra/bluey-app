@@ -4,11 +4,9 @@ import kotlinx.serialization.Serializable
 
 class GetCharacterDetailUseCase(private val characterRepository: CharacterRepository) {
 
-    suspend operator fun invoke(): Result<List<Output>> {
-        return characterRepository.getCharacters().map { characters ->
-            characters.map {
-                Output(it.id, it.name, it.urlPhoto, it.shortDescription)
-            }
+    suspend operator fun invoke(characterId: String): Result<Output> {
+        return characterRepository.getCharacterDetail(characterId).map { character ->
+            Output(character.id, character.name, character.urlPhoto, character.shortDescription)
         }
     }
 

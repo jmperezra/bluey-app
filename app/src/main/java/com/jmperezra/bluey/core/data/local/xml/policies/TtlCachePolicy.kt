@@ -12,7 +12,7 @@ class TtlCachePolicy<T : XmlModel>(
 
     private val ttlMillis: Long = timeUnit.toMillis(ttl)
 
-    override fun isValid(data: T): Boolean {
-        return data.getPersistedTime() + ttlMillis > timeProvider.getCurrentTimeInMs()
+    override fun isValid(data: T?): Boolean {
+        return data != null && data.getPersistedTime() + ttlMillis > timeProvider.getCurrentTimeInMs()
     }
 }

@@ -21,15 +21,23 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/character_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/high_size_media_big"
+                android:adjustViewBounds="true"
+                tools:src="@tools:sample/avatars"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
+    </ScrollView>
 
-        </ScrollView>
-
-        <com.jmperezra.bluey.core.presentation.errors.ErrorAppView
-            android:id="@+id/error_view"
+    <com.jmperezra.bluey.core.presentation.errors.ErrorAppView
+        android:id="@+id/error_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:visibility="gone"
