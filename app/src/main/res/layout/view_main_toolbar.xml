@@ -7,7 +7,7 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/bar_characters"
-        style="@style/AppMainToolbar"
+        style="@style/Widget.BlueyApp.Toolbar.Main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:title="Título"

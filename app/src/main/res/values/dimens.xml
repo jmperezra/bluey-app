@@ -8,8 +8,11 @@
     <dimen name="spacing_text">8dp</dimen>
 
     <!-- Images -->
-    <dimen name="high_size_media_big">128dp</dimen>
-    <dimen name="width_size_media_listitem">56dp</dimen>
+    <dimen name="image_size_s">16dp</dimen>
+    <dimen name="image_size_m">32dp</dimen>
+    <dimen name="image_size_l">48dp</dimen>
+    <dimen name="image_size_xl">64dp</dimen>
+    <dimen name="image_size_xxl">80dp</dimen>
 
     <!-- fonts -->
     <dimen name="font_size_extra_small">12sp</dimen>

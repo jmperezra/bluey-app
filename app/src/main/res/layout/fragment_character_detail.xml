@@ -12,6 +12,7 @@
         layout="@layout/view_main_toolbar" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -26,9 +27,8 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/character_image"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/high_size_media_big"
-                android:adjustViewBounds="true"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/image_size_xxl"
                 tools:src="@tools:sample/avatars"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

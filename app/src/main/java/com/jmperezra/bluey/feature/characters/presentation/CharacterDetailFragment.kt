@@ -42,7 +42,7 @@ class CharacterDetailFragment : Fragment() {
     }
 
     private fun setupView() {
-        //skeleton = binding..createSkeleton()
+        skeleton = binding.contentLayout.createSkeleton()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -78,7 +78,7 @@ class CharacterDetailFragment : Fragment() {
     private fun bindData(character: GetCharacterDetailUseCase.Output?) {
         character?.let {
             binding.apply {
-                //characterImage.fromUrl(it.urlPhoto)
+                characterImage.fromUrl(it.urlPhoto)
             }
         }
     }

@@ -9,9 +9,7 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image_character"
-        style="@style/AppImageListItem"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
+        style="@style/Widget.BlueyApp.ListItem.Image"
         app:layout_constraintBottom_toBottomOf="@id/short_description_character"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/name_character"
@@ -19,7 +17,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/name_character"
-        style="@style/AppHeadline"
+        style="@style/TextAppearance.BlueyApp.ListItem.Title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/spacing_horizontal"
@@ -30,7 +28,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/short_description_character"
-        style="@style/AppSupportingText"
+        style="@style/TextAppearance.BlueyApp.ListItem.Body"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@id/name_character"

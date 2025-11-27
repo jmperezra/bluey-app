@@ -9,61 +9,52 @@
     -->
 
     <!-- Textos -->
-    <style name="TextAppearance.BlueyApp.ListItem.Title" parent="TextAppearance.Material3.BodyLarge">
+    <style name="TextAppearance.BlueyApp.ListItem.Title" parent="TextAppearance.Material3.TitleSmall.Emphasized">
+        <item name="android:textColor">@color/md_theme_onSurface</item>
+    </style>
+
+    <style name="TextAppearance.BlueyApp.ListItem.Body" parent="TextAppearance.Material3.BodyMedium">
         <item name="android:textColor">@color/md_theme_onSurface</item>
     </style>
 
     <style name="TextAppearance.BlueyApp.Text.TitleError" parent="TextAppearance.Material3.TitleLarge.Emphasized">
         <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginVertical">@dimen/spacing_vertical</item>
     </style>
 
     <style name="TextAppearance.BlueyApp.Text.BodyError" parent="TextAppearance.Material3.BodyLarge">
         <item name="android:textAlignment">center</item>
     </style>
 
-    <!-- Botones -->
-    <style name="Widget.BlueyApp.Button" parent="Widget.Material3.Button">
 
-    </style>
+    <!-- Widgets -->
 
-    <!-- ListItem Component -->
-    <style name="AppImageListItem">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">@dimen/width_size_media_listitem</item>
-    </style>
-
-    <!-- End ListItem Component -->
-
-    <style name="CircularImageView" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
-    </style>
-
-    <!-- toolbar -->
-    <style name="AppMainToolbar" parent="Widget.Material3.Toolbar">
-        <item name="titleCentered">true</item>
+    <style name="Widget.BlueyApp.Toolbar" parent="Widget.Material3.Toolbar">
         <item name="titleTextColor">@color/md_theme_primary</item>
     </style>
 
-    <style name="AppCollapseDetailToolbar" parent="Widget.Material3.CollapsingToolbar.Medium">
-        <item name="collapsedTitleTextColor">@color/md_theme_primary</item>
-        <item name="expandedTitleTextColor">@color/md_theme_primary</item>
-        <item name="android:background">@color/md_theme_surface</item>
-        <item name="contentScrim">@color/md_theme_surface</item>
+    <style name="Widget.BlueyApp.Toolbar.Main">
+        <item name="titleCentered">true</item>
     </style>
 
-    <style name="AppDetailToolbar" parent="AppMainToolbar">
-        <item name="titleCentered">false</item>
-        <item name="navigationIconTint">@color/md_theme_primary</item>
+    <style name="Widget.BlueyApp.Toolbar.Detail">
+
     </style>
 
-    <style name="AppBottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+    <style name="Widget.BlueyApp.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
         <item name="itemTextColor">@color/md_theme_primary</item>
         <item name="itemIconTint">@color/md_theme_primary</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="labelVisibilityMode">labeled</item>
     </style>
 
-    <style name="AppChip" parent="@style/ShapeAppearanceOverlay.Material3.Chip">
-        <item name="chipBackgroundColor">@color/md_theme_primaryContainer</item>
+    <style name="Widget.BlueyApp.Button" parent="Widget.Material3.Button" />
+
+    <style name="Widget.BlueyApp.ListItem.Image" parent="">
+        <item name="android:layout_width">@dimen/image_size_xl</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
     </style>
 
 </resources>

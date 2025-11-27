@@ -22,10 +22,10 @@ class ErrorAppView @JvmOverloads constructor(
 
     fun render(errorAppUI: ErrorAppUI) {
         binding.apply {
-            imageError.setImageResource(errorAppUI.getImageError())
-            titleError.text = errorAppUI.getTitleError()
-            descriptionError.text = errorAppUI.getDescriptionError()
-            buttonRetryError.setOnClickListener {
+            errorImage.setImageResource(errorAppUI.getImageError())
+            titleErrorText.text = errorAppUI.getTitleError()
+            descriptionErrorText.text = errorAppUI.getDescriptionError()
+            retryErrorButton.setOnClickListener {
                 errorAppUI.getActionRetry()
             }
             visible()
