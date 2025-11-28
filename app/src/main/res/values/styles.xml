@@ -10,11 +10,11 @@
 
     <!-- Textos -->
     <style name="TextAppearance.BlueyApp.ListItem.Title" parent="TextAppearance.Material3.TitleSmall.Emphasized">
-        <item name="android:textColor">@color/md_theme_onSurface</item>
+        <item name="android:textColor">@color/md_theme_primary</item>
     </style>
 
     <style name="TextAppearance.BlueyApp.ListItem.Body" parent="TextAppearance.Material3.BodyMedium">
-        <item name="android:textColor">@color/md_theme_onSurface</item>
+        <item name="android:textColor">@color/md_theme_primary</item>
     </style>
 
     <style name="TextAppearance.BlueyApp.Text.TitleError" parent="TextAppearance.Material3.TitleLarge.Emphasized">
@@ -26,6 +26,21 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <style name="Widget.BlueyApp.Card" parent="Widget.Material3.CardView.Outlined">
+
+    </style>
+
+    <style name="TextAppearance.BlueyApp.Card.Title" parent="TextAppearance.Material3.TitleMedium.Emphasized">
+
+    </style>
+
+    <style name="TextAppearance.BlueyApp.Card.SubTitle" parent="TextAppearance.Material3.TitleSmall.Emphasized">
+
+    </style>
+
+    <style name="TextAppearance.BlueyApp.Card.Body" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/md_theme_onSurface</item>
+    </style>
 
     <!-- Widgets -->
 
@@ -33,7 +48,7 @@
         <item name="titleTextColor">@color/md_theme_primary</item>
     </style>
 
-    <style name="Widget.BlueyApp.Toolbar.Main">
+    <style name="Widget.BlueyApp.Toolbar.Main" parent="Widget.BlueyApp.Toolbar">
         <item name="titleCentered">true</item>
     </style>
 

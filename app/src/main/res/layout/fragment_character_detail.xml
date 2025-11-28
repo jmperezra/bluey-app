@@ -4,49 +4,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context=".feature.characters.presentation.CharacterDetailFragment">
 
     <include
         android:id="@+id/view_toolbar"
-        layout="@layout/view_main_toolbar" />
+        layout="@layout/view_collapsing_toolbar" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/content_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <ScrollView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/feature_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/spacing">
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/character_image"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/image_size_xxl"
-                tools:src="@tools:sample/avatars"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_size_xxxxl"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
 
-    </ScrollView>
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.BlueyApp.Card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/spacing_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/character_image">
 
-    <com.jmperezra.bluey.core.presentation.errors.ErrorAppView
-        android:id="@+id/error_view"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_horizontal"
+                    android:orientation="vertical">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/bio_title"
+                        style="@style/TextAppearance.BlueyApp.Card.Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_vertical"
+                        tools:text="Resumen BIO" />
 
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppearance.BlueyApp.Card.SubTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Nombre" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/fullname_text"
+                        style="@style/TextAppearance.BlueyApp.Card.Body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Bluey Christine Heeler" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppearance.BlueyApp.Card.SubTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Edad" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/age_text"
+                        style="@style/TextAppearance.BlueyApp.Card.Body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="7 años" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.jmperezra.bluey.core.presentation.errors.ErrorAppView
+                android:id="@+id/error_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

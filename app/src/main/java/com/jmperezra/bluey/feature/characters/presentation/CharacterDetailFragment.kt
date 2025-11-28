@@ -1,14 +1,17 @@
 package com.jmperezra.bluey.feature.characters.presentation
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.faltenreich.skeletonlayout.Skeleton
 import com.faltenreich.skeletonlayout.createSkeleton
+import com.jmperezra.bluey.R
 import com.jmperezra.bluey.core.domain.ErrorApp
 import com.jmperezra.bluey.core.presentation.errors.ErrorAppFactory
 import com.jmperezra.bluey.core.presentation.ext.fold
@@ -78,7 +81,9 @@ class CharacterDetailFragment : Fragment() {
     private fun bindData(character: GetCharacterDetailUseCase.Output?) {
         character?.let {
             binding.apply {
+                viewToolbar.toolbar.title = it.name
                 characterImage.fromUrl(it.urlPhoto)
+                //bioText.text = it.shortDescription
             }
         }
     }

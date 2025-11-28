@@ -44,7 +44,7 @@ val characterModule = module {
     factory {
         //Bind
         TtlCachePolicy<CharacterXmlModel>(
-            5,
+            60,
             TimeUnit.MINUTES,
             get()
         ) as CachePolicy<CharacterXmlModel>
